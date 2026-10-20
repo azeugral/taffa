@@ -86,7 +86,7 @@ svg{width:1em;height:1em;flex:none}
 
 /* hero */
 .hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:calc(var(--nav-h) + 32px) 0 64px;overflow:hidden;isolation:isolate}
-.hero-fundo{position:absolute;inset:0;z-index:-1;background:var(--papel) url(../img/sumi.webp) center/cover no-repeat}
+.hero-fundo{position:absolute;inset:0;z-index:-1;background:var(--papel) url(../img/tinta.webp) center/cover no-repeat}
 .fundo-gl,.fundo-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s var(--ease)}
 .fundo-gl.on,.fundo-vid.on{opacity:1}
 .hero-fundo::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(242,239,232,.9) 22%,rgba(242,239,232,.35) 52%,rgba(242,239,232,0) 68%),linear-gradient(0deg,var(--papel),rgba(242,239,232,0) 20%)}
@@ -268,7 +268,7 @@ svg{width:1em;height:1em;flex:none}
 
 /* chamada final */
 .fim{position:relative;padding:clamp(96px,14vw,170px) 0;text-align:center;overflow:hidden;isolation:isolate;border-top:1px solid var(--fio)}
-.fim-fundo{position:absolute;inset:0;z-index:-1;background:var(--papel) url(../img/sumi.webp) center/cover no-repeat}
+.fim-fundo{position:absolute;inset:0;z-index:-1;background:var(--papel) url(../img/tinta.webp) center/cover no-repeat}
 .fim-fundo::after{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse 60% 70% at 50% 50%,rgba(242,239,232,.94) 32%,rgba(242,239,232,.4) 82%)}
 .fim-in{padding:0 var(--gut)}
 .fim h2{font-size:clamp(2rem,5.4vw,3.8rem);text-transform:uppercase;max-width:15ch;margin:0 auto}
@@ -326,7 +326,7 @@ svg{width:1em;height:1em;flex:none}
   .btn-nav span{display:none}
   .btn-nav{width:46px;padding:0}
   .hero{min-height:auto;padding:calc(var(--nav-h) + 24px) 0 48px}
-  .hero-fundo{background-image:url(../img/sumi-m.webp);background-position:center top}
+  .hero-fundo{background-image:url(../img/tinta-m.webp);background-position:center top}
   .hero-fundo::after{background:linear-gradient(180deg,rgba(242,239,232,.55),rgba(242,239,232,.25) 45%,rgba(242,239,232,0) 70%),linear-gradient(0deg,var(--papel),rgba(242,239,232,0) 20%)}
   .hero-in{grid-template-columns:1fr;gap:34px}
   .hero-txt{text-align:center}

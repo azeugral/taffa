@@ -7,7 +7,7 @@ Feito pela [L R G Z](https://lrgz.com.br). Publicado em https://azeugral.github.
 
 - **Logo:** a logo "Taffa" enviada pelo cliente (2000 px), vetorizada por `tools/vetorizar.py` (origem `_ref/logo-cliente.webp`).
 - **Paleta:** papel `#f2efe8`, nanquim `#0c0c0d` e as três tintas que ele oferece em todo flash: vermelho `#c1121c` e azul `#1d40d2`.
-- **Fundo do hero:** `assets/js/sumi.js`, suminagashi (marmorização de nanquim na água) em shader, espelhado atrás da foto. No desktop roda ao vivo; no toque entra o MP4 de `tools/gerar_video.py`.
+- **Fundo do hero:** `assets/js/tinta.js`, ornamento de nanquim vivo: só preto no papel, poucos traços que afinam em ponta, espelhados atrás da foto e mudando devagar (loop de 50 s). No desktop roda ao vivo na resolução da tela; no toque entra o MP4 de `tools/gerar_video.py`. A versão anterior (suminagashi colorido) foi trocada a pedido.
 - **Fontes:** Unbounded, IBM Plex Sans e JetBrains Mono.
 - **Favicon:** o T da logo, em nanquim sobre o papel (`tools/favicon.py`).
 
