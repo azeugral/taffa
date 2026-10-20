@@ -5,11 +5,11 @@ Feito pela [L R G Z](https://lrgz.com.br). Publicado em https://azeugral.github.
 
 ## Identidade
 
-- **Logo:** a assinatura "Taffa" das folhas de flash de 2026, vetorizada (`tools/vetorizar.py`, origem `_ref/pin/001.png`).
+- **Logo:** a logo "Taffa" enviada pelo cliente (2000 px), vetorizada por `tools/vetorizar.py` (origem `_ref/logo-cliente.webp`).
 - **Paleta:** papel `#f2efe8`, nanquim `#0c0c0d` e as três tintas que ele oferece em todo flash: vermelho `#c1121c` e azul `#1d40d2`.
 - **Fundo do hero:** `assets/js/sumi.js`, suminagashi (marmorização de nanquim na água) em shader, espelhado atrás da foto. No desktop roda ao vivo; no toque entra o MP4 de `tools/gerar_video.py`.
 - **Fontes:** Unbounded, IBM Plex Sans e JetBrains Mono.
-- **Favicon:** o tubarão tribal do avatar do Linktree.
+- **Favicon:** o T da logo, em nanquim sobre o papel (`tools/favicon.py`).
 
 ## Conteúdo
 

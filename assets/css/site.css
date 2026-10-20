@@ -37,8 +37,8 @@ svg{width:1em;height:1em;flex:none}
 ::selection{background:var(--sangue);color:#fff}
 
 /* logo: a assinatura "Taffa" das folhas de flash, vetorizada */
-.logo-mask{display:block;aspect-ratio:1572/529;background:currentColor;
-  -webkit-mask:url(../img/logo.svg?v=1) center/contain no-repeat;mask:url(../img/logo.svg?v=1) center/contain no-repeat}
+.logo-mask{display:block;aspect-ratio:3890/1286;background:currentColor;
+  -webkit-mask:url(../img/logo.svg?v=2) center/contain no-repeat;mask:url(../img/logo.svg?v=2) center/contain no-repeat}
 
 /* botões: placa reta com um contorno solto a 4px, que encosta na placa no hover enquanto a cor troca */
 .btn{--c:var(--tinta);--tx:var(--papel);--h:var(--sangue);--o:var(--tinta);position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.65em;
