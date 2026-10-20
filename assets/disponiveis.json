@@ -1,0 +1,286 @@
+{
+"series": {
+"terriveis": "Desenhos terríveis, 2026",
+"outros": "Bichos e dragões",
+"merian": "Bestiário de Merian",
+"coolkids": "Cool kids never die"
+},
+"flash": [
+{
+"id": "01",
+"serie": "terriveis",
+"nome": "Dragão terrível I",
+"pin": "884816658065799562"
+},
+{
+"id": "02",
+"serie": "terriveis",
+"nome": "Dragão terrível II",
+"pin": "884816658065799544"
+},
+{
+"id": "03",
+"serie": "terriveis",
+"nome": "Ornamento espelhado",
+"pin": "884816658065799538"
+},
+{
+"id": "04",
+"serie": "terriveis",
+"nome": "Bornéu e micro bichos I",
+"pin": "884816658065740802"
+},
+{
+"id": "05",
+"serie": "terriveis",
+"nome": "Bornéu e micro bichos II",
+"pin": "884816658065740795"
+},
+{
+"id": "06",
+"serie": "terriveis",
+"nome": "Bornéu e micro bichos III",
+"pin": "884816658065740793"
+},
+{
+"id": "07",
+"serie": "terriveis",
+"nome": "Bornéu e micro bichos IV",
+"pin": "884816658065740788"
+},
+{
+"id": "08",
+"serie": "terriveis",
+"nome": "Bornéu e micro bichos V",
+"pin": "884816658065740785"
+},
+{
+"id": "09",
+"serie": "terriveis",
+"nome": "Peixasso",
+"pin": "884816658065739649"
+},
+{
+"id": "10",
+"serie": "terriveis",
+"nome": "Ornamentos marinhos",
+"pin": "884816658065739625"
+},
+{
+"id": "11",
+"serie": "terriveis",
+"nome": "Patos amarelos I",
+"pin": "884816658065704919"
+},
+{
+"id": "12",
+"serie": "terriveis",
+"nome": "Peixe",
+"pin": "884816658065704898"
+},
+{
+"id": "13",
+"serie": "terriveis",
+"nome": "Peixe tropical",
+"pin": "884816658065704882"
+},
+{
+"id": "14",
+"serie": "terriveis",
+"nome": "Dragão terrível e feio",
+"pin": "884816658065704509"
+},
+{
+"id": "15",
+"serie": "terriveis",
+"nome": "Arm suit em espiral",
+"pin": "884816658065704438"
+},
+{
+"id": "16",
+"serie": "terriveis",
+"nome": "Arm suit",
+"pin": "884816658065703551"
+},
+{
+"id": "17",
+"serie": "terriveis",
+"nome": "Diva predadora absoluta",
+"pin": "884816658065703534"
+},
+{
+"id": "18",
+"serie": "terriveis",
+"nome": "Patos amarelos II",
+"pin": "884816658065703482"
+},
+{
+"id": "19",
+"serie": "terriveis",
+"nome": "Sapo",
+"pin": "884816658065703334"
+},
+{
+"id": "20",
+"serie": "terriveis",
+"nome": "Arm suit de Bornéu",
+"pin": "884816658065703199"
+},
+{
+"id": "21",
+"serie": "terriveis",
+"nome": "Te amo sapos",
+"pin": "884816658065702770"
+},
+{
+"id": "22",
+"serie": "terriveis",
+"nome": "Patos amarelos III",
+"pin": "884816658065702723"
+},
+{
+"id": "23",
+"serie": "terriveis",
+"nome": "Peixes e escorpiões",
+"pin": "884816658065702584"
+},
+{
+"id": "24",
+"serie": "terriveis",
+"nome": "Nepenthes",
+"pin": "884816658065702490"
+},
+{
+"id": "25",
+"serie": "outros",
+"nome": "Cão",
+"pin": "884816658047909595"
+},
+{
+"id": "26",
+"serie": "outros",
+"nome": "Tubarões",
+"pin": "884816658037370205"
+},
+{
+"id": "27",
+"serie": "merian",
+"nome": "Bestiário de Merian I",
+"pin": "884816658037025873"
+},
+{
+"id": "28",
+"serie": "merian",
+"nome": "Bestiário de Merian II",
+"pin": "884816658037025852"
+},
+{
+"id": "29",
+"serie": "merian",
+"nome": "Bestiário de Merian III",
+"pin": "884816658037025714"
+},
+{
+"id": "30",
+"serie": "merian",
+"nome": "Bestiário de Merian IV",
+"pin": "884816658037025672"
+},
+{
+"id": "31",
+"serie": "outros",
+"nome": "Ânfora, cobra e yin-yang",
+"pin": "884816658037025273"
+},
+{
+"id": "32",
+"serie": "outros",
+"nome": "Mão e yin-yang",
+"pin": "884816658037025171"
+},
+{
+"id": "33",
+"serie": "coolkids",
+"nome": "Cool kids 01",
+"pin": "884816658037351233"
+},
+{
+"id": "34",
+"serie": "coolkids",
+"nome": "Cool kids 02",
+"pin": "884816658037351223"
+},
+{
+"id": "35",
+"serie": "coolkids",
+"nome": "Cool kids 03",
+"pin": "884816658037351099"
+},
+{
+"id": "36",
+"serie": "coolkids",
+"nome": "Cool kids 04",
+"pin": "884816658037351084"
+},
+{
+"id": "37",
+"serie": "coolkids",
+"nome": "Cool kids 05",
+"pin": "884816658037351073"
+},
+{
+"id": "38",
+"serie": "coolkids",
+"nome": "Cool kids 06",
+"pin": "884816658037351052"
+},
+{
+"id": "39",
+"serie": "coolkids",
+"nome": "Cool kids 07",
+"pin": "884816658037351007"
+},
+{
+"id": "40",
+"serie": "coolkids",
+"nome": "Cool kids 08",
+"pin": "884816658037350983"
+},
+{
+"id": "41",
+"serie": "coolkids",
+"nome": "Cool kids 09",
+"pin": "884816658037350961"
+},
+{
+"id": "42",
+"serie": "coolkids",
+"nome": "Cool kids 10",
+"pin": "884816658037350912"
+},
+{
+"id": "43",
+"serie": "coolkids",
+"nome": "Cool kids 11",
+"pin": "884816658037350896"
+},
+{
+"id": "44",
+"serie": "outros",
+"nome": "Borboleta cybertribal",
+"pin": "884816658037029493"
+},
+{
+"id": "45",
+"serie": "outros",
+"nome": "Lagartos",
+"pin": "884816658037030890"
+},
+{
+"id": "46",
+"serie": "outros",
+"nome": "Dragões",
+"pin": "884816658037029545"
+}
+]
+}
