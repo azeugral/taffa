@@ -28,7 +28,7 @@
   bm.addEventListener('click', () => abreMenu(menu.hidden));
   $$('a', menu).forEach(a => a.addEventListener('click', () => abreMenu(false)));
 
-  /* fundo: ornamento de nanquim espelhado, ao vivo no desktop (WebGL) e MP4 em loop no toque */
+  /* fundo: fumaça sutil, ao vivo no desktop (WebGL) e MP4 em loop no toque */
   const fundo = $('.hero-fundo'), cv = $('.fundo-gl', fundo), hv = $('.fundo-vid', fundo);
   const toque = matchMedia('(hover: none), (pointer: coarse), (max-width: 760px)').matches;
   const tocaVideo = (v, src) => {
@@ -37,11 +37,11 @@
     v.addEventListener('playing', () => v.classList.add('on'), { once: true });
     new IntersectionObserver(([e]) => e.isIntersecting ? v.play().catch(() => {}) : v.pause()).observe(v.parentElement);
   };
-  /* eixo do espelho: no centro da foto do hero */
+  /* eixo da luz: no centro da foto do hero */
   const eixo = () => { const f = $('.hero-foto').getBoundingClientRect(); return Math.min(.85, Math.max(.5, (f.left + f.width / 2) / innerWidth)); };
   const vivo = () => {
     let T;
-    try { T = tintaGL(cv); } catch (e) { T = null; }
+    try { T = fumacaGL(cv); } catch (e) { T = null; }
     if (!T) return;
     /* resolução real da tela (até 2x); se o quadro passar de ~22 ms em média, baixa em degraus */
     const CICLO = 50000;
@@ -64,7 +64,7 @@
     };
     if (calmo) { T.desenhar(0, ex); cv.classList.add('on'); } else requestAnimationFrame(quadro);
   };
-  if (toque) tocaVideo(hv, innerWidth > innerHeight ? 'assets/video/tinta-deitado.mp4' : 'assets/video/tinta-celular.mp4');
+  if (toque) tocaVideo(hv, innerWidth > innerHeight ? 'assets/video/fumaca-deitado.mp4' : 'assets/video/fumaca-celular.mp4');
   else vivo();
   $$('.fim-fundo .fundo-vid').forEach(v => tocaVideo(v, v.dataset.src));
 

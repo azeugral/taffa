@@ -6,10 +6,10 @@ Feito pela [L R G Z](https://lrgz.com.br). Publicado em https://azeugral.github.
 ## Identidade
 
 - **Logo:** a logo "Taffa" enviada pelo cliente (2000 px), vetorizada por `tools/vetorizar.py` (origem `_ref/logo-cliente.webp`).
-- **Paleta:** papel `#f2efe8`, nanquim `#0c0c0d` e as três tintas que ele oferece em todo flash: vermelho `#c1121c` e azul `#1d40d2`.
-- **Fundo do hero:** `assets/js/tinta.js`, ornamento gravado: corpos de ornamento desenhados só com linhas finas (contorno, espinha e feixe paralelo que converge em ponta preta, como buril), espelhados atrás da foto e mudando devagar (loop de 50 s). No desktop roda ao vivo na resolução da tela; no toque entra o MP4 de `tools/gerar_video.py`. A versão anterior (suminagashi colorido) foi trocada a pedido.
+- **Paleta (v3, escura):** fundo `#0b0b0c`, seções mais fundas `#070708`, texto `#ece8df`, vermelho `#d01f2a` e azul `#4a68ff`. As folhas de flash continuam em papel claro. A v1 clara está em `_ref/site-claro.css`.
+- **Fundo do hero:** `assets/js/fumaca.js`, fumaça sutil de simplex torcido, com luz baixa atrás da foto e dither contra degraus no escuro. No desktop roda ao vivo; no toque entra o MP4 de `tools/gerar_video.py`. Tentativas anteriores (suminagashi colorido, ornamento em nanquim, gravura) foram descartadas.
 - **Fontes:** Unbounded, IBM Plex Sans e JetBrains Mono.
-- **Favicon:** o T da logo, em nanquim sobre o papel (`tools/favicon.py`).
+- **Favicon:** o T da logo, claro sobre o fundo escuro (`tools/favicon.py`).
 
 ## Conteúdo
 
