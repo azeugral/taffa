@@ -1,5 +1,5 @@
 """Favicon e apple-touch-icon: o T da logo do Taffa (a peça mais à esquerda de _ref/logo-cliente.webp),
-em tinta clara sobre o fundo escuro do site. Uso: python site/tools/favicon.py"""
+em nanquim sobre o papel do site. Uso: python site/tools/favicon.py"""
 import os
 import numpy as np
 from PIL import Image, ImageFilter
@@ -19,6 +19,6 @@ for nome, tam, margem in [('favicon-32.png', 32, .06), ('favicon-64.png', 64, .0
     m = quad.resize((tam * 4, tam * 4), Image.LANCZOS)
     if tam <= 32: m = m.filter(ImageFilter.MaxFilter(3))          # engrossa um pouco o traço para não sumir em 32 px
     m = m.resize((tam, tam), Image.LANCZOS)
-    papel = Image.new('RGB', (tam, tam), (11, 11, 12)); tinta = Image.new('RGB', (tam, tam), (236, 232, 223))
+    papel = Image.new('RGB', (tam, tam), (242, 239, 232)); tinta = Image.new('RGB', (tam, tam), (12, 12, 13))
     Image.composite(tinta, papel, m).save(os.path.join(SITE, nome), optimize=True)
 print('ok', cob.size)

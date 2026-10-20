@@ -1,4 +1,4 @@
-/* Fundo do hero: fumaça de nanquim no escuro, sutil.
+/* Fundo do hero: fumaça de nanquim sobre o papel, sutil.
    Véus de fumaça de um fbm de simplex torcido duas vezes sobre si mesmo (domain warp), iluminados por uma
    luz baixa atrás da foto, e alguns fios claros finos, raros. Contraste baixo de propósito: a fumaça fica
    atrás do conteúdo. O dither por pixel evita degraus nos gradientes escuros.
@@ -59,12 +59,13 @@ void main(){
   float base=smoothstep(.7,-.55,p.y);
   float m=.18+.82*clamp(luz*.85+base*.35,0.,1.);
 
-  vec3 fundo=vec3(.035,.035,.038);
-  vec3 cinza=vec3(.62,.6,.58);
-  vec3 col=fundo+cinza*veu*m*.14+vec3(.9,.88,.85)*fio*m*.2;
-  /* um brilho quase imperceptível em volta da luz */
-  col+=vec3(.05,.048,.046)*luz*.35;
-  vec2 v=fc/uRes-.5; col*=1.-.45*dot(v,v);
+  /* no papel a fumaça é de nanquim: escurece em véus cinza e os fios são um traço mais fechado */
+  vec3 papel=vec3(.949,.937,.910);
+  vec3 cinza=vec3(.5,.5,.52);
+  vec3 col=papel-cinza*veu*m*.2-vec3(.62,.62,.64)*fio*m*.26;
+  /* uma sombra quase imperceptível atrás da foto */
+  col-=vec3(.03)*luz*.5;
+  vec2 v=fc/uRes-.5; col*=1.-.08*dot(v,v);
   /* dither: ruído de gradiente intercalado, troca a cada quadro, some no vídeo comprimido e na tela */
   vec2 gq=fc+vec2(5.588,2.37)*floor(fract(uFase*9.)*64.);
   col+=(fract(52.9829189*fract(dot(gq,vec2(.06711056,.00583715))))-.5)/255.;
