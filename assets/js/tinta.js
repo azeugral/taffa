@@ -1,8 +1,8 @@
-/* Fundo do hero: ornamento de nanquim vivo, como os flashs do Taffa no papel branco.
-   Poucos traços pretos, grossos no meio e afinando em ponta, que nascem de um campo liso (simplex) e mudam
-   de forma devagar. Cada traço é a curva de nível f = 0 do campo; a distância até ela é f/|∇f|, então a
-   espessura e a borda saem exatas, com antialias de um pixel em qualquer resolução. Tudo espelhado num eixo
-   vertical, como os ornamentos simétricos dele.
+/* Fundo do hero: ornamento gravado, como os flashs do Taffa e os espelhos que ele grava à mão.
+   Corpos de ornamento que nascem de um campo liso (simplex), grossos no meio e afinando em ponta, desenhados
+   só com linhas finas: contorno, espinha e um feixe de linhas paralelas que converge na ponta, como buril.
+   Cada corpo é a curva de nível f = 0 do campo; a distância até ela é f/|∇f|, então as linhas saem exatas,
+   com antialias de um pixel em qualquer resolução. Tudo espelhado num eixo vertical e mudando devagar.
    tintaGL(canvas, {eixo}) -> {tamanho(w,h), desenhar(fase, eixo)}; fase em [0, 2π) fecha o loop sem emenda.
    O mesmo shader gera os MP4 do celular (tools/gerar_video.py). */
 (function (g) {
@@ -30,7 +30,7 @@ float sn(vec2 v){
 }
 
 vec2 C; /* (cos, sin) da fase: o movimento anda num círculo e o loop fecha */
-/* campo dos traços: grande, lento, um pouco torcido */
+/* campo dos corpos: grande, lento, um pouco torcido */
 float campo(vec2 p, float k){
   vec2 w=vec2(sn(p*.55+C*.35+k),sn(p*.55+vec2(4.1,7.3)-C.yx*.35-k));
   p+=w*.42;
@@ -45,29 +45,53 @@ vec2 mapa(vec2 fc){
   float dx=(fc.x-uEixo*uRes.x)/esc;
   return vec2(sqrt(dx*dx+.0025),(fc.y-.5*uRes.y)/esc)*1.1;
 }
-/* um traço do campo k, na escala s e deslocamento o; w = meia largura em unidades do campo.
-   O gradiente é medido na tela, depois do espelho: assim a distância em pixels é exata também no eixo,
-   onde o dobramento achata o campo (medir antes do espelho enchia ali umas bolinhas pretas). */
+/* um corpo do campo k, na escala s e deslocamento o; w = meia largura em unidades do campo.
+   Devolve a distância em pixels até a espinha (x) e a meia largura em pixels (y). O gradiente é medido na
+   tela, depois do espelho: assim a distância é exata também no eixo, onde o dobramento achata o campo. */
 float F(vec2 fc, float k, float s, vec2 o){ return campo(mapa(fc)*s+o,k); }
-float traco(vec2 fc, float k, float s, vec2 o, float w, float px){
-  const float h=1.5;
-  float f=F(fc,k,s,o);
-  vec2 g=vec2(F(fc+vec2(h,0.),k,s,o)-F(fc-vec2(h,0.),k,s,o),F(fc+vec2(0.,h),k,s,o)-F(fc-vec2(0.,h),k,s,o))/(2.*h);
+vec2 corpoPx(vec2 fc, float k, float s, vec2 o, float w, float px){
+  /* gradiente por três amostras a meio pixel, centradas no pixel (dois cálculos a menos que a diferença central) */
+  const float h=.5;
+  float fa=F(fc+vec2(-h,-h)*.5,k,s,o), fb=F(fc+vec2(h,-h)*.5,k,s,o), fd=F(fc+vec2(-h,h)*.5,k,s,o);
+  vec2 g=vec2(fb-fa,fd-fa)/h;
+  float f=(fb+fd)*.5;
   /* piso no gradiente: perto de um pico do campo o laço fica vazado em vez de virar mancha */
-  float d=abs(f)/max(length(g),.4*px*s);
+  float d=abs(f)/max(length(g),.12*px*s);
   float t=corpo(mapa(fc)*s+o,k);
-  float lw=w*pow(t,1.6)/(px*s);          /* meia largura em pixels */
-  /* a ponta some: abaixo de um pixel o traço vai ficando transparente em vez de virar fio */
-  return (1.-smoothstep(lw-.75,lw+.75,d))*smoothstep(0.,1.2,lw);
+  return vec2(d,w*pow(t,1.35)/(px*s));
+}
+/* linha fina de meia largura hw (px), com antialias de um pixel */
+float fio(float dist, float hw){ return 1.-smoothstep(hw-.55,hw+.55,dist); }
+
+/* gravura: o corpo é desenhado só com linhas finas, como buril em metal ou os espelhos gravados do Taffa.
+   Contorno, espinha mais marcada e n linhas de cada lado, sempre as mesmas: elas se juntam sozinhas quando
+   o corpo afina, e quando ficam a menos de ~2 px uma da outra viram tinta cheia (a ponta fecha em preto, sem moiré). */
+float gravura(vec2 dl, float n, float hw){
+  float d=dl.x, lw=dl.y;
+  if(lw<.4) return 0.;
+  float dentro=1.-smoothstep(lw-.6,lw+.6,d);
+  float contorno=fio(abs(d-lw),hw*1.15)*smoothstep(.6,2.5,lw);
+  float e=lw/n;
+  float hh=abs(fract(d/e+.5)-.5)*e;
+  float junto=1.-smoothstep(2.4,4.2,e);
+  float feixe=mix(fio(hh,hw*.85)*.9,1.,junto)*dentro;
+  float espinha=fio(d,hw*1.35);
+  return clamp(max(max(contorno,espinha),feixe),0.,1.)*smoothstep(.4,1.6,lw);
 }
 
 void main(){
   vec2 fc=gl_FragCoord.xy;
   C=vec2(cos(uFase),sin(uFase));
-  float px=1.1/min(uRes.x,uRes.y);
+  float esc=min(uRes.x,uRes.y);
+  float px=1.1/esc;
+  /* espessura das linhas proporcional ao tamanho: o desenho é o mesmo em 1x, 2x e no vídeo */
+  float hw=max(.42,esc*.00042);
 
-  /* dois traços: um largo e um fino, em escalas diferentes */
-  float tinta=max(traco(fc,0.,1.,vec2(0.),.016,px),traco(fc,1.7,1.3,vec2(2.3,-1.1),.0085,px));
+  /* corpo largo gravado, corpo médio gravado e um fio solto, em escalas diferentes */
+  float tinta=gravura(corpoPx(fc,0.,1.,vec2(0.),.05,px),6.,hw);
+  tinta=max(tinta,gravura(corpoPx(fc,1.7,1.35,vec2(2.3,-1.1),.026,px),4.,hw*.9));
+  vec2 f3=corpoPx(fc,3.4,.8,vec2(-1.7,3.2),.0028,px);
+  tinta=max(tinta,fio(f3.x,max(f3.y,0.))*smoothstep(.2,1.,f3.y)*.9);
 
   vec3 papel=vec3(.949,.937,.910);
   vec3 nanquim=vec3(.047,.047,.051);
