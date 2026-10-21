@@ -23,6 +23,5 @@ Feito pela [L R G Z](https://lrgz.com.br). Publicado em https://azeugral.github.
 2. **Ano em SP e tempo de tattoo:** "em São Paulo desde 2016" saiu de uma legenda de 2024 ("esse ano faço 8 anos em sp"); "uns cinco anos de agulha" saiu de "4 anos depois" (2025). Confirmar.
 3. **Sinal e valores:** o site não mostra preço (as promoções do IG são antigas). Confirmar se quer tabela por tamanho.
 4. **Datas de guest:** Indaiatuba, Florianópolis, Rio e BH estão como lista de espera, conforme o Linktree. Quando abrir data, trocar no bloco `.agenda` do `index.html`.
-5. **Espelhos no Fim do Mundo:** confirmar se há loja/site próprio para as peças (as legendas citam "venda pelo site"); por enquanto os botões vão para @espelhosnofimdomund0 e para o WhatsApp.
-6. **Fotos de clientes:** as cicatrizadas vêm do destaque, algumas com @ do cliente na imagem.
-7. **Domínio:** ainda sem domínio próprio.
+5. **Espelhos no Fim do Mundo:** os botões vão para a loja Nuvemshop (espelhosnofimdomundo.lojavirtualnuvem.com.br) e para o @espelhosnofimdomundo, achados na bio desse perfil. Confirmar se é esse o link que ele quer divulgar.
+6. **Domínio:** ainda sem domínio próprio.

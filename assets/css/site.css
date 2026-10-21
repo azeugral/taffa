@@ -183,10 +183,6 @@ svg{width:1em;height:1em;flex:none}
 .obra-leg span.c-cor{color:var(--cobalto)}
 .grade-mais{display:flex;justify-content:center;margin-top:36px}
 
-/* cicatrizadas: os stories, em pé */
-.cic{display:grid;grid-template-columns:repeat(9,1fr);gap:10px}
-.cic img{aspect-ratio:9/16;width:100%;object-fit:cover;border:1px solid var(--fio);-webkit-user-drag:none;-webkit-touch-callout:none}
-
 /* orçamento */
 .passos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .passos li{padding:24px 22px 26px;background:var(--branco);border:1px solid var(--fio);border-top:2px solid var(--tinta)}
@@ -310,8 +306,6 @@ svg{width:1em;height:1em;flex:none}
   .nav-menu{display:block;margin-left:0}
   .grade,.flash,.arte{grid-template-columns:repeat(3,1fr)}
   .passos{grid-template-columns:repeat(2,1fr)}
-  .cic{grid-template-columns:repeat(5,1fr)}
-  .cic li:nth-child(n+6){display:none}
   .agenda-in{grid-template-columns:auto 1fr}
   .agenda-btns{grid-column:1/-1}
 }
@@ -346,9 +340,6 @@ svg{width:1em;height:1em;flex:none}
   .tintas{display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;gap:12px;margin:0 calc(var(--gut) * -1);padding:0 var(--gut) 8px;scrollbar-width:none}
   .tintas::-webkit-scrollbar{display:none}
   .tinta{flex:0 0 78%;scroll-snap-align:center}
-  .cic{display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;gap:10px;margin:0 calc(var(--gut) * -1);padding:0 var(--gut) 8px;scrollbar-width:none}
-  .cic::-webkit-scrollbar{display:none}
-  .cic li,.cic li:nth-child(n+6){display:block;flex:0 0 46%;scroll-snap-align:start}
   .passos{grid-template-columns:1fr}
   .msg{margin-left:calc(var(--gut) * -1);margin-right:calc(var(--gut) * -1);border-left:0;border-right:0}
   .msg-campos{grid-template-columns:1fr}
