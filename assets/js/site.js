@@ -117,6 +117,24 @@
     if (Math.abs(dx) > 40 && lista.fotos.length > 1) passa(dx < 0 ? 1 : -1);
   });
 
+  /* loja: vitrine das peças em estoque dos Espelhos no Fim do Mundo; o botão leva pro produto na Nuvemshop */
+  fetch('assets/loja.json').then(r => r.json()).then(itens => {
+    $('#produtos').innerHTML = itens.map((p, i) => `
+      <li class="produto" style="animation-delay:${i * 40}ms">
+        <a class="produto-foto" href="${p.url}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+          <img src="assets/img/loja/${p.slug}-1.webp" alt="" width="600" height="800" loading="lazy">
+          ${p.fotos > 1 ? `<img class="alt" src="assets/img/loja/${p.slug}-2.webp" alt="" width="600" height="800" loading="lazy">` : ''}
+        </a>
+        <div class="produto-info">
+          <p class="produto-cat">${p.cat}</p>
+          <h3><a href="${p.url}" target="_blank" rel="noopener">${p.nome}</a></h3>
+          <p class="preco">${p.preco}</p>
+          <p class="parcela">${p.parcelas}</p>
+          <a class="btn btn-tinta produto-comprar" href="${p.url}" target="_blank" rel="noopener" aria-label="Comprar ${p.cat}: ${p.nome}, ${p.preco}">Comprar</a>
+        </div>
+      </li>`).join('');
+  });
+
   /* portfólio */
   const grade = $('#grade'), mais = $('#mais');
   let obras = [], filtro = 'todos', limite = 16;

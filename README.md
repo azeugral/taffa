@@ -16,6 +16,8 @@ Feito pela [L R G Z](https://lrgz.com.br). Publicado em https://azeugral.github.
 - `assets/obras.json`: 52 trabalhos do Instagram (2023 a 2026), gerados por `tools/processar.py`.
 - `assets/disponiveis.json`: 46 flashs da pasta [Disponíveis do Pinterest](https://br.pinterest.com/taffa_s2/dispon%C3%ADveis/) (o botão "Disponíveis" do Linktree). Entram só os que o título marca como disponíveis; os "indisp." e "reservado" ficam de fora.
 - Para atualizar os disponíveis: baixar a pasta de novo para `_ref/pin` e rodar `python site/tools/processar.py`.
+- **Loja (vitrine):** `assets/loja.json` + `assets/img/loja/`, as peças em estoque da loja Nuvemshop dos Espelhos no Fim do Mundo (preço, parcelas sem juros, 2 fotos, link do produto), no molde da vitrine da DAC. Para atualizar: `python -I site/tools/loja.py` (lê a loja) e `python -I site/tools/processar_loja.py` (fotos e JSON). Os nomes da loja vêm com "�" no lugar dos acentos; os nomes certos ficam em `NOMES` no `processar_loja.py` (peça nova precisa de uma linha lá e na `ORDEM`).
+- **Ordem das seções:** Hero, Loja, Disponíveis, Portfólio, Três tintas, Agenda, Orçamento, Sobre, Onde.
 
 ## CONFIRMAR com o cliente
 
@@ -23,5 +25,5 @@ Feito pela [L R G Z](https://lrgz.com.br). Publicado em https://azeugral.github.
 2. **Ano em SP e tempo de tattoo:** "em São Paulo desde 2016" saiu de uma legenda de 2024 ("esse ano faço 8 anos em sp"); "uns cinco anos de agulha" saiu de "4 anos depois" (2025). Confirmar.
 3. **Sinal e valores:** o site não mostra preço (as promoções do IG são antigas). Confirmar se quer tabela por tamanho.
 4. **Datas de guest:** Indaiatuba, Florianópolis, Rio e BH estão como lista de espera, conforme o Linktree. Quando abrir data, trocar no bloco `.agenda` do `index.html`.
-5. **Espelhos no Fim do Mundo:** os botões vão para a loja Nuvemshop (espelhosnofimdomundo.lojavirtualnuvem.com.br) e para o @espelhosnofimdomundo, achados na bio desse perfil. Confirmar se é esse o link que ele quer divulgar.
+5. **Loja:** a vitrine mostra as 12 peças em estoque em 29/10/2026 (preços conferidos na Nuvemshop). Os nomes da loja estão com caracteres quebrados no cadastro ("DRAG�O"): vale avisar o Taffa para corrigir lá.
 6. **Domínio:** ainda sem domínio próprio.

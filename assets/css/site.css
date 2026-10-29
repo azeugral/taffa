@@ -234,13 +234,26 @@ svg{width:1em;height:1em;flex:none}
 .faq details[open] summary::after{transform:rotate(45deg)}
 .faq details p{padding:0 2px 22px;color:var(--cinza)}
 
-/* espelhos no fim do mundo */
-.arte{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.arte li{position:relative;border:1px solid var(--fio-esc);overflow:hidden;background:var(--grafite)}
-.arte img{aspect-ratio:4/5;width:100%;object-fit:cover;transition:transform .8s var(--ease)}
-.arte li:hover img{transform:scale(1.04)}
-.arte span{display:block;padding:11px 13px 13px;font:500 .72rem/1.3 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--cinza-cl);border-top:1px solid var(--fio-esc)}
-.arte-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:36px}
+/* loja: vitrine dos Espelhos no Fim do Mundo (Nuvemshop), no molde da DAC: foto que troca no hover,
+   categoria, nome, preço, parcelas e o botão de comprar, que abre o produto na loja */
+.produtos{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 16px}
+.produto{display:flex;flex-direction:column;min-width:0;animation:aparece .5s var(--ease) both}
+.produto-foto{position:relative;display:block;aspect-ratio:3/4;overflow:hidden;background:var(--papel);border:1px solid var(--fio);transition:border-color var(--t) var(--ease)}
+.produto-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .45s var(--ease),transform .8s var(--ease);-webkit-user-drag:none;-webkit-touch-callout:none}
+.produto-foto .alt{opacity:0}
+.produto:hover .produto-foto{border-color:var(--tinta)}
+.produto:hover .produto-foto img{transform:scale(1.03)}
+.produto:hover .produto-foto .alt{opacity:1}
+.produto-info{display:flex;flex-direction:column;flex:1;padding-top:14px}
+.produto-cat{font:600 .68rem/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--sangue);margin-bottom:8px}
+.produto h3{font:600 .98rem/1.25 var(--f-txt);letter-spacing:0;margin-bottom:10px}
+.produto h3 a{text-decoration:none;transition:color var(--t) var(--ease)}
+.produto h3 a:hover{color:var(--sangue)}
+.produto .preco{font:800 1.12rem/1 var(--f-tit)}
+.produto .parcela{margin:6px 0 16px;font:500 .78rem/1.3 var(--f-mono);color:var(--cinza)}
+.produto .parcela:empty{display:none}
+.produto-comprar{margin-top:auto;min-height:46px;width:calc(100% - 8px);font-size:.74rem}
+.loja-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:40px}
 
 /* sobre */
 .sobre{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,6vw,80px);align-items:center}
@@ -304,7 +317,8 @@ svg{width:1em;height:1em;flex:none}
   .nav-links{display:none}
   .btn-nav{margin-left:auto}
   .nav-menu{display:block;margin-left:0}
-  .grade,.flash,.arte{grid-template-columns:repeat(3,1fr)}
+  .grade,.flash{grid-template-columns:repeat(3,1fr)}
+  .produtos{grid-template-columns:repeat(3,1fr)}
   .passos{grid-template-columns:repeat(2,1fr)}
   .agenda-in{grid-template-columns:auto 1fr}
   .agenda-btns{grid-column:1/-1}
@@ -334,7 +348,12 @@ svg{width:1em;height:1em;flex:none}
   .filtros{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;overflow-y:hidden;margin:0 calc(var(--gut) * -1) 22px;padding:0 var(--gut);scrollbar-width:none}
   .filtros::-webkit-scrollbar{display:none}
   .filtros button{flex:none}
-  .grade,.flash,.arte{grid-template-columns:repeat(2,1fr);gap:10px}
+  .grade,.flash{grid-template-columns:repeat(2,1fr);gap:10px}
+  .produtos{grid-template-columns:repeat(2,1fr);gap:24px 10px}
+  .produto h3{font-size:.86rem}
+  .produto .preco{font-size:1rem}
+  .produto .parcela{font-size:.7rem}
+  .produto-comprar{min-height:42px;font-size:.68rem;padding:0 .6em}
   .flash .f-nome{font-size:.78rem;padding:9px 10px 11px}
   .obra-leg{font-size:.8rem}
   .tintas{display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;gap:12px;margin:0 calc(var(--gut) * -1);padding:0 var(--gut) 8px;scrollbar-width:none}
@@ -348,7 +367,7 @@ svg{width:1em;height:1em;flex:none}
   .sobre-foto{max-width:300px}
   .local{grid-template-columns:1fr}
   .local-foto{aspect-ratio:16/10;height:auto;order:-1}
-  .local-btns .btn,.arte-btns .btn{width:calc(100% - 8px)}
+  .local-btns .btn,.loja-btns .btn{width:calc(100% - 8px)}
   .fim .btn{width:calc(100% - 8px)}
   .galeria{padding:56px 10px 96px}
   .gal-fig img{max-width:100%;max-height:calc(100svh - 240px)}

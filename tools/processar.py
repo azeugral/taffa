@@ -5,7 +5,7 @@ from PIL import Image, ImageOps
 
 AQUI = os.path.dirname(os.path.abspath(__file__)); SITE = os.path.dirname(AQUI)
 REF = os.path.join(SITE, '..', '_ref'); A = os.path.join(SITE, 'assets', 'img')
-for d in ('obras', 'flash', 'arte', 'hero'): os.makedirs(f'{A}/{d}', exist_ok=True)
+for d in ('obras', 'flash', 'hero'): os.makedirs(f'{A}/{d}', exist_ok=True)
 DADOS = json.load(open(f'{REF}/ig/dados.json', encoding='utf-8'))
 
 def recorte(src, dst, w, h, dy=.5, q=82):
@@ -84,10 +84,6 @@ json.dump(obras, open(f'{SITE}/assets/obras.json', 'w', encoding='utf-8'), ensur
 for k, (p, f, dy) in enumerate([('015','2',.4), ('112','1',.45), ('070','1',.45), ('105','1',.35), ('012','1',.5)], 1):
     recorte(f'{REF}/ig/{p}-{f}.jpg', f'{A}/hero/{k}.webp', 900, 1125, dy, q=84)
 
-# Espelhos no Fim do Mundo e outras artes
-ARTE = [('045','3'),('043','1'),('041','5'),('013','1'),('045','4'),('017','1'),('051','1'),('040','1'),('017','10'),('108','1'),('017','6'),('100','1')]
-for k, (p, f) in enumerate(ARTE, 1):
-    recorte(f'{REF}/ig/{p}-{f}.jpg', f'{A}/arte/{k:02d}.webp', 720, 900)
 recorte(f'{REF}/ig/059-1.jpg', f'{A}/taffa.webp', 720, 900, .4)
 
 # disponíveis: só o que a pasta do Pinterest marca como disponível (nada de "indisp" ou "reserv")
