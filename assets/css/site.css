@@ -378,6 +378,7 @@ svg{width:1em;height:1em;flex:none}
     font:600 .8rem/1 var(--f-mono);letter-spacing:.07em;text-transform:uppercase;transform:translateY(110%);transition:transform var(--t) var(--ease)}
   .barra-zap svg{color:var(--sangue-2)}
   .barra-zap.on{transform:none}
+  .barra-zap.on.pv-oculto{transform:translateY(110%)}
   .rodape{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
 }
 @media (max-width:380px){

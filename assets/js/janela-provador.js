@@ -2,6 +2,9 @@
 (() => {
   const f = document.getElementById("pv-janela");
   if (!f) return;
+  // a barra fixa do WhatsApp sai de cena enquanto o provador está na tela (não cobre os botões dele)
+  const barra = document.querySelector(".barra-zap");
+  if (barra && "IntersectionObserver" in window) new IntersectionObserver(([e]) => barra.classList.toggle("pv-oculto", e.isIntersecting), { rootMargin: "-20% 0px -20% 0px" }).observe(f);
   const suave = () => (matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth");
   const topoLivre = () => { const n = document.querySelector(".nav, header.topo, #nav"); return (n ? Math.max(0, n.getBoundingClientRect().bottom) : 0) + 14; };
   addEventListener("message", (e) => {
