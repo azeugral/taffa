@@ -181,7 +181,7 @@ svg{width:1em;height:1em;flex:none}
 .obra-leg{display:flex;gap:10px;align-items:baseline;padding:10px 2px 0;font-size:.86rem;color:#33322e}
 .obra-leg span{font:600 .7rem/1 var(--f-mono);color:var(--sangue)}
 .obra-leg span.c-cor{color:var(--cobalto)}
-.grade-mais{display:flex;justify-content:center;margin-top:36px}
+.grade-mais{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:36px}
 
 /* orçamento */
 .passos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -386,4 +386,12 @@ svg{width:1em;height:1em;flex:none}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
   html{scroll-behavior:auto}
+}
+
+/* cursor: o tubarão do Taffa (flash "TUBARÃO"); vermelho sobre o que clica, mordendo ao arrastar. Só em mouse. */
+@media (hover:hover) and (pointer:fine){
+  html,body{cursor:url(../img/provador/tubarao.png) 1 14,auto}
+  a,button,summary,label,select,[role=tab],input[type=range],input[type=checkbox],input[type=radio],.pv-palco.sobre{cursor:url(../img/provador/tubarao-link.png) 1 14,pointer}
+  .pv-palco.pega,body.pv-arrasta,body.pv-arrasta *{cursor:url(../img/provador/tubarao-morde.png) 1 2,grabbing!important}
+  input[type=text],input[type=email],input[type=tel],textarea{cursor:text}
 }

@@ -1,0 +1,98 @@
+[
+ {
+  "id": "01",
+  "nome": "Dragão terrível I",
+  "serie": "terriveis",
+  "r": 1.2748
+ },
+ {
+  "id": "02",
+  "nome": "Dragão terrível II",
+  "serie": "terriveis",
+  "r": 0.7
+ },
+ {
+  "id": "03",
+  "nome": "Ornamento espelhado",
+  "serie": "terriveis",
+  "r": 1.4634
+ },
+ {
+  "id": "09",
+  "nome": "Peixasso",
+  "serie": "terriveis",
+  "r": 0.5689
+ },
+ {
+  "id": "12",
+  "nome": "Peixe",
+  "serie": "terriveis",
+  "r": 0.6389
+ },
+ {
+  "id": "13",
+  "nome": "Peixe tropical",
+  "serie": "terriveis",
+  "r": 0.5756
+ },
+ {
+  "id": "14",
+  "nome": "Dragão terrível e feio",
+  "serie": "terriveis",
+  "r": 0.8056
+ },
+ {
+  "id": "17",
+  "nome": "Diva predadora absoluta",
+  "serie": "terriveis",
+  "r": 1.3333
+ },
+ {
+  "id": "19",
+  "nome": "Sapo",
+  "serie": "terriveis",
+  "r": 0.7644
+ },
+ {
+  "id": "21",
+  "nome": "Te amo sapos",
+  "serie": "terriveis",
+  "r": 0.7157
+ },
+ {
+  "id": "24",
+  "nome": "Nepenthes",
+  "serie": "terriveis",
+  "r": 1.1765
+ },
+ {
+  "id": "26",
+  "nome": "Tubarões",
+  "serie": "outros",
+  "r": 0.9677
+ },
+ {
+  "id": "25",
+  "nome": "Cão",
+  "serie": "outros",
+  "r": 1.1566
+ },
+ {
+  "id": "29",
+  "nome": "Bestiário de Merian III",
+  "serie": "merian",
+  "r": 0.5729
+ },
+ {
+  "id": "30",
+  "nome": "Bestiário de Merian IV",
+  "serie": "merian",
+  "r": 0.6529
+ },
+ {
+  "id": "31",
+  "nome": "Ânfora, cobra e yin-yang",
+  "serie": "outros",
+  "r": 1.6698
+ }
+]
