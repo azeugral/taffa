@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/img/hero/1.webp">
-<link rel="stylesheet" href="assets/css/site.css?v=7">
+<link rel="stylesheet" href="assets/css/site.css?v=8">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -121,8 +121,30 @@
       <button role="tab" aria-selected="true" data-s="todos">Todos</button>
     </div>
     <ul class="flash" id="flash"></ul>
-    <div class="grade-mais"><button class="btn btn-linha" id="flash-mais"><span>Ver mais desenhos</span><svg><use href="#seta"/></svg></button><a class="btn btn-tinta" href="provador.html"><span>Provar no corpo</span><svg><use href="#seta"/></svg></a></div>
+    <div class="grade-mais"><button class="btn btn-linha" id="flash-mais"><span>Ver mais desenhos</span><svg><use href="#seta"/></svg></button><a class="btn btn-tinta" href="#provador"><span>Provar no corpo</span><svg><use href="#seta"/></svg></a></div>
     <p class="flash-nota">A lista acompanha a pasta <a href="https://br.pinterest.com/taffa_s2/dispon%C3%ADveis/" target="_blank" rel="noopener"><svg><use href="#pin"/></svg>Disponíveis</a> no Pinterest, onde os desenhos novos entram primeiro.</p>
+  </div>
+</section>
+
+<section class="sec sec-papel" id="provador">
+  <div class="sec-in">
+    <header class="sec-cab">
+      <h2>Prove no corpo</h2>
+      <p>Ponha um disponível na pele de um corpo 3D, ajuste tamanho e giro e veja de todos os lados. Depois é só mandar a montagem pra orçar.</p>
+    </header>
+    <ul class="pv-roteiro">
+      <li><b>Ponha um disponível na pele</b></li>
+      <li><b>Ajuste tamanho e giro</b></li>
+      <li><b>Gire o corpo e confira</b></li>
+      <li><b>Peça o orçamento</b></li>
+    </ul>
+    <div class="pv-janela">
+      <div class="pv-janela-barra">
+        <span translate="no">Provador 3D · Taffa</span>
+        <a href="https://lrgz-manequim.pages.dev/taffa/provador/" target="_blank" rel="noopener">Abrir em tela cheia ↗</a>
+      </div>
+      <iframe id="pv-janela" src="https://lrgz-manequim.pages.dev/taffa/provador/?vitrine=1" title="Provador 3D dos disponíveis" loading="lazy" allow="clipboard-write; web-share"></iframe>
+    </div>
   </div>
 </section>
 
@@ -328,5 +350,6 @@
 
 <script src="assets/js/fumaca.js?v=2" defer></script>
 <script src="assets/js/site.js?v=4" defer></script>
+<script src="assets/js/janela-provador.js?v=1" defer></script>
 </body>
 </html>

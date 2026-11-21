@@ -395,3 +395,28 @@ svg{width:1em;height:1em;flex:none}
   .pv-palco.pega,body.pv-arrasta,body.pv-arrasta *{cursor:url(../img/provador/tubarao-morde.png) 1 2,grabbing!important}
   input[type=text],input[type=email],input[type=tel],textarea{cursor:text}
 }
+
+/* ---------- provador 3D (LRGZ Manequim) dentro do site, no formato do lrgz.com.br/agenda ---------- */
+.pv-roteiro{list-style:none;margin:0 auto clamp(24px,3vw,36px);padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:1100px;border-top:1px solid var(--fio)}
+.pv-roteiro li{counter-increment:pvr;padding:14px 16px 0;border-left:1px solid var(--fio)}
+.pv-roteiro li:first-child{border-left:0;padding-left:0}
+.pv-roteiro li::before{content:counter(pvr,decimal-leading-zero);display:block;margin-bottom:6px;font:600 11px/1 var(--f-mono);letter-spacing:.14em;color:var(--sangue)}
+.pv-roteiro b{font-weight:500;color:var(--tinta)}
+.pv-janela{max-width:1200px;margin:0 auto;border:1px solid var(--fio);background:var(--papel);box-shadow:0 40px 90px -50px rgba(12,12,13,.45)}
+.pv-janela-barra{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 16px;border-bottom:1px solid var(--fio);background:var(--branco);font:500 12px/1 var(--f-mono);letter-spacing:.06em;color:var(--cinza)}
+.pv-janela-barra span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pv-janela-barra a{flex:none;display:inline-flex;align-items:center;color:var(--tinta);text-decoration:none;border-bottom:1px solid var(--tinta);padding:12px 0 2px;transition:color var(--t) var(--ease),border-color var(--t) var(--ease)}
+.pv-janela-barra a:hover{color:var(--sangue);border-color:var(--sangue)}
+#pv-janela{display:block;width:100%;height:1100px;border:0;background:var(--papel);transition:height .25s var(--ease)}
+@media (max-width:860px){
+  .pv-roteiro{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pv-roteiro li:nth-child(odd){border-left:0;padding-left:0}
+  .pv-roteiro li:nth-child(n+3){border-top:1px solid var(--fio);margin-top:14px}
+}
+@media (max-width:760px){
+  .pv-janela{margin-inline:calc(var(--gut) * -1);border-inline:0}
+  .pv-janela-barra{padding:8px var(--gut)}
+  .pv-roteiro li{padding:12px 10px 0}
+  .pv-roteiro li:nth-child(odd){padding-left:0}
+  .pv-roteiro b{font-size:.92rem}
+}
